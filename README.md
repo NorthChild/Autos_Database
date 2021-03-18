@@ -3,3 +3,5 @@ Web based application (in PHP) to track data about automobiles and store said da
 this small projects shows implementation of Login,Logout, authentication, flash messages and sessions.
 
 part of my uni course assignment
+
+credit to https://github.com/nostalgic-css/NES.css, their CSS framework is awesome, really appreciate the work they've put on this.
