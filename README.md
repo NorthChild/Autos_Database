@@ -1,6 +1,6 @@
 # Autos_Database
 Web based application (in PHP) to track data about automobiles and store said data in a MySQL database.
-this small projects shows implementation of Login,Logout, authentication, flash messages and sessions.
+this small projects shows implementation of Password encryption, Login, Logout, Authentication, Flash messages and Sessions.
 
 part of my uni course assignment
 
