@@ -1,0 +1,122 @@
+body {
+  margin: 3% !important;
+}
+
+#loginContainer{
+  width: 100%;
+}
+
+.nes-container.is-dark {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.nes-balloon.from-left.is-dark {
+  width: 60% !important;
+  line-height: 2.5em !important;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Press Start 2P";
+  color: #337ab7;
+}
+
+h1 {
+  font-family: "Press Start 2P";
+}
+
+.hint{
+  font-family: "Press Start 2P";
+  font-size: 40%  !important ;
+}
+
+.rpsTitle {
+  font-family: "Press Start 2P" !important;
+}
+
+input#submit {
+  margin-top: 5%;
+  width: 10em;
+  text-transform: uppercase;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0 0 2.5% 0 !important;
+  font-weight: bold;
+  border-style: solid;
+  border-color: #000000;
+  border-width: medium;
+}
+
+form {
+  text-align: center;
+}
+
+i.nes-bcrikko {
+  margin-right: 5% !important;
+}
+
+#moduleMessage {
+  color: red;
+  text-align: center;
+}
+
+#moduleMessageII {
+  color: green;
+  text-align: center;
+}
+
+#noteIndex {
+  font-size: 8px !important;
+}
+
+#logInText{
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+
+#loginContainer input {
+  text-align: center !important;
+}
+
+#gameContainer h1,p {
+  margin-bottom: 5%;
+  text-transform: uppercase;
+  text-align: center !important;
+}
+
+#gameContainer form,input {
+  text-align: right !important;
+}
+
+.buttons{
+  text-align: center;
+}
+
+#loginH1 {
+  font-size: 290%;
+  text-align: center;
+
+  margin-bottom: 3%;
+
+}
+
+.nes-container.is-rounded {
+  margin-top: 3% !important;
+}
+
+#secondBrikko {
+  margin: 0 0 0 5% !important;
+}
+
+.autosDisplay {
+   text-align: left !important;
+}
+
+.autosDataBaseDisplayed, td, tr {
+  text-align: left !important;
+  padding: 0.5em !important;
+  text-transform: uppercase;
+}
