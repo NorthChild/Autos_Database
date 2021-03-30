@@ -1,7 +1,7 @@
-
 <?php
 
 session_start();
+require_once "pdo.php";
 
 ###################################### MODEL ######################################
 
@@ -18,18 +18,13 @@ $stored_hash = '1a52e17fa899cf40fb04cfc42e6352f1';
 
 ################################ Validation #####################################
 
-// logout to index
-if (isset($_POST['cancel']) && $_POST['cancel'] === "Cancel") {
-  header('Location: index.php');
-  return;
-}
 
 // validate the data
 if (isset($_POST['email']) && isset($_POST['pass'])) {
 
   # insert POST DATA into Session variables
   $email = $_POST['email'];
-  $_SESSION['name'] = $email;
+  $_SESSION['email'] = $email;
 
   $userPass = $_POST['pass'];
   $_SESSION['pass'] = $userPass;
@@ -68,7 +63,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
     return;
 
   } elseif (($passCheck === $stored_hash) && ($emailCheck != false)) {
-    header("Location: view.php?email=".urlencode($email));
+    header("Location: index.php?email=".urlencode($email));
     error_log("Login success ".$_POST['email']);
     return;
   }
@@ -78,64 +73,54 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 ###################################### VIEW #######################################
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="CSS/autos.css">
-    <title>Michael John Carini - Week 4 - Assignment, Autos Database with POST - Redirect </title>
-
+    <title>Michael John Carini - Assignment Autos CRUD</title>
+    <link rel="stylesheet" href="CSS/autosCSS.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-
   </head>
   <body>
 
-    <section class="nes-container is-dark">
-      <section id="indexContainer" class="message -right">
-        <div class="nes-balloon from-right is-dark">
 
-          <div id="loginContainer">
-              <h1 id="loginH1">Please Log In</h1>
+<section class="nes-container is-dark">
+<section id="indexContainer" class="message -right">
+<div class="nes-balloon from-right is-dark">
+<div id="loginContainer">
 
-              <p>
-                <?php
+<h1>Please Log In</h1>
 
-                // here we set the success / error flash message
-                if (isset($_SESSION["error"])) {
-                  echo('<p style = "color:red">').htmlentities($_SESSION["error"])."</p>\n";
-                  unset($_SESSION["error"]);
-                }
 
-                ?>
-              </p>
+<p>
+  <?php
 
-              <form method="post">
-                  <label for="name"><b>User Name:</b></label>
-                  <input type="text" name="email" id="name"> <br>
+  // here we set the error flash message
+  if (isset($_SESSION["error"])) {
+    echo('<p style = "color:red">').htmlentities($_SESSION["error"])."</p>\n";
+    unset($_SESSION["error"]);
+  }
 
-                  <label><b>Password:</b></label>
-                  <input type="password" name="pass" > <br>
+  ?>
+</p>
 
-                  <div class="buttons">
-                    <input class="nes-btn is-success" id="submit" size="30" type="submit" value="Log In">
-                    <input class="nes-btn is-error" id="submit" size="30" type="submit" name="cancel" value="Cancel"  >
-                  </div>
-              </form>
-                <p class="hint">
-                For a password hint, view source and find a password hint
-                in the HTML comments.
-                <!-- Hint: The password is the three character name of the
-                programming language used in this class (all lower case)
-                followed by 123. -->
-                </p>
-          </div>
 
-        </div>
-        <i id="secondBrikko" class="nes-bcrikko"></i>
-      </section>
+<form class="" method="post">
+  <label> <b>User Name</b><input type="text" name="email"> </label> <br>
+  <label> <b>Password</b><input type="password" name="pass"> </label> <br>
+  <button class="nes-btn is-success" type="submit" value="Log In">Log In</button> <a class="nes-btn is-error" href="index.php">Cancel</a>
+</form>
 
-    </section>
+
+</div>
+
+  </div>
+    <i id="secondBrikko" class="nes-bcrikko"></i>
+  </section>
+
+</section>
 
   </body>
 </html>
