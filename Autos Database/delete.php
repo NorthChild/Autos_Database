@@ -46,7 +46,7 @@ if (isset($_POST['delete'])) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Michael John Carini - Assignment Autos CRUD</title>
+    <title>Michael John Carini - Autos DB CRUD</title>
     <link rel="stylesheet" href="CSS/autosCSS.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
